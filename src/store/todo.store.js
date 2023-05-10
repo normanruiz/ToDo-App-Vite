@@ -10,12 +10,12 @@ const Filters = {
 const state = {
 
     todos: [
-        new Todo('Emepzar el curso de VueJS.'),
+        new Todo('Empezar el curso de VueJS.'),
         new Todo('Continuar con el curso de Python.'),
         new Todo('Continuar con este curso.'),
-        new Todo('Terminar de leer el libro de Ruby Onm Rails.'),
+        new Todo('Terminar de leer el libro de Ruby On Rails.'),
         new Todo('Continuar con el libro de fxRuby.'),
-        new Todo('Emepzar con el libro de Python.')
+        new Todo('Empezar con el libro de Python.')
     ],
     filter: Filters.All
 
