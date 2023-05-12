@@ -5,7 +5,8 @@ import { renderTodos } from './use-cases';
 
 const ElementIds = {
     TodoList: '.todo-list',
-    NewTodoInput: '#new-todo-input'
+    NewTodoInput: '#new-todo-input',
+    ClearCompleted: '.clear-completed',
 };
 
 /**
@@ -28,7 +29,8 @@ export const App = (elementId) => {
     })();
 
     const newDescriptionInput = document.querySelector(ElementIds.NewTodoInput);
-    const todoListUL = document.querySelector(ElementIds.TodoList); 
+    const todoListUL = document.querySelector(ElementIds.TodoList);
+    const clearCompleted = document.querySelector(ElementIds.ClearCompleted); 
 
     newDescriptionInput.addEventListener('keyup', (event) => {
         if ( event.keyCode !== 13 ) return;
@@ -51,6 +53,11 @@ export const App = (elementId) => {
             todoStore.deleteTodo(element.getAttribute('data-id'));
             cargarTodos();
         }
+    });
+
+    clearCompleted.addEventListener( 'click', () => {
+        todoStore.deleteCompleted();
+        cargarTodos();
     });
 
 }
