@@ -14,7 +14,7 @@ export const createTodoHTML = ( todo ) => {
 
     liElement.innerHTML = html;
     liElement.setAttribute( 'data-id', todo.id );
-    if(todo.done) liElement.classList( 'completed' )
+    if(todo.done) liElement.classList.add( 'completed' )
 
     return liElement;
     
